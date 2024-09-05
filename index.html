@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
   <title>Happy Teacher's Day 3D Animated Card</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -106,7 +107,7 @@
       opacity: 0;
     }
 
-    /* Floating emojis */
+
     .emoji-container {
       position: absolute;
       width: 100%;
@@ -125,7 +126,7 @@
       z-index: 1;
     }
 
-    /* Keyframes */
+  
     @keyframes floatEmoji {
       0% {
         transform: translateY(0) rotate(0deg);
@@ -165,33 +166,33 @@
 </head>
 <body>
 
-  <!-- 3D Rotating Card -->
+
   <div class="card">
-    <!-- Image of Sardar Vallabhbhai Patel -->
+   
     <div class="image-container" id="image-container">
-      <img src="sd.jpg" alt="Sardar Vallabhbhai Patel">
+      <img src="sd.jpg">
     </div>
 
-    <!-- First Message: Happy Teacher's Day -->
+    
     <div class="message front">
       <h1>Happy Teacher's Day! 🎉</h1>
       <p>Thank you for shaping our future! 🌟</p>
     </div>
 
-    <!-- Second Message: No Image -->
+   
     <div class="message second hide-image">
       <h1>You're the Best! 🏆</h1>
       <p>Guiding us to success with wisdom and care. 📚</p>
     </div>
 
-    <!-- Third Message: No Image -->
+   
     <div class="message third hide-image">
       <h1>We Appreciate You! 🙌</h1>
       <p>Forever grateful for your teachings! ❤️</p>
     </div>
   </div>
 
-  <!-- Floating emojis container -->
+
   <div class="emoji-container"></div>
 
   <script>
@@ -201,18 +202,18 @@
     const containerWidth = window.innerWidth;
     const containerHeight = window.innerHeight;
 
-    // Define areas for emojis
+    
     const leftAreaWidth = containerWidth / 2;
     const rightAreaWidth = containerWidth / 2;
     const centerX = containerWidth / 2;
 
-    // Generate random emojis and place them on the left and right sides
+ 
     for (let i = 0; i < emojiCount; i++) {
       const emoji = document.createElement('div');
       emoji.classList.add('emoji');
       emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
 
-      // Randomly choose between left and right sides
+
       const isLeftSide = Math.random() < 0.5;
 
       if (isLeftSide) {
@@ -229,7 +230,7 @@
       emojiContainer.appendChild(emoji);
     }
 
-    // Hide image on second and third rotations
+
     const imageContainer = document.getElementById('image-container');
     const secondMessage = document.querySelector('.second');
     const thirdMessage = document.querySelector('.third');
@@ -239,16 +240,16 @@
       rotation = (rotation + 1) % 3;
 
       if (rotation === 1) {
-        secondMessage.style.opacity = 1; // Show the second message
+        secondMessage.style.opacity = 1; 
         imageContainer.classList.add('hide-image');
       } else if (rotation === 2) {
-        thirdMessage.style.opacity = 1; // Show the third message
+        thirdMessage.style.opacity = 1; 
       } else {
         secondMessage.style.opacity = 0;
         thirdMessage.style.opacity = 0;
         imageContainer.classList.remove('hide-image');
       }
-    }, 5000); // Adjust timing as needed for rotation
+    }, 5000); 
   </script>
 
 </body>
